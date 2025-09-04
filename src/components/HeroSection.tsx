@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
@@ -70,14 +68,14 @@ export default function HeroSection() {
               {navLinks
                 .filter((link) => link.name !== "Contact")
                 .map((link) => (
-                  <Link
+                  <a
                     key={link.name}
                     href={link.href}
                     onClick={(e) => handleNavClick(link.href, e)}
                     className="text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 ))}
               <button
                 onClick={() => {

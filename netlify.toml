@@ -1,6 +1,1 @@
-[build]
-  command = "npm run build"
-  publish = "out"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Removed netlify.toml as it is specific to Next.js and not needed for React app
