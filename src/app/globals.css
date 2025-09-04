@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
 }
 
@@ -14,13 +14,53 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000000;
+  background-image: radial-gradient(circle at center, rgba(50, 180, 255, 0.1) 0%, transparent 70%),
+                    radial-gradient(circle at 20% 30%, rgba(255, 50, 200, 0.1) 0%, transparent 70%),
+                    radial-gradient(circle at 80% 70%, rgba(255, 220, 50, 0.1) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+
+/* Blinking cursor for typed text effect */
+.typed-cursor { display: inline-block; width: 2px; background-color: #38bdf8; animation: blink 0.7s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Scroll animations */
+.scroll-animate, .stagger-item { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.scroll-animate.visible, .stagger-item.visible { opacity: 1; transform: translateY(0); }
+
+/* --- MODAL STYLES --- */
+.modal { transition: opacity 0.3s ease; }
+.modal-content { transition: transform 0.3s ease; }
+
+/* Ensure neural network canvas is properly positioned */
+#neural-network-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+
