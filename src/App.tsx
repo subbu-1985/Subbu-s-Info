@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import NeuralNetwork from "./components/NeuralNetwork";
 import HeroSection from "./components/HeroSection";
 import Skills from "./components/Skills";
