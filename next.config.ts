@@ -1,1 +1,0 @@
-/* Removed next.config.ts as it is not needed for React app */
